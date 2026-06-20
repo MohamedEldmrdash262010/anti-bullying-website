@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ai.css">
+    <title>AI Support Chatbot</title>
+</head>
+<body>
+    <header>
+        <h1>AI Support Chatbot</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Support</h2>
+            <div class="chatbox">
+                <div id="chatbox-messages" class="chatbox-messages">
+                    <!-- Messages will be displayed here -->
+                </div>
+                <div class="chatbox-input">
+                    <input type="text" id="user-input" placeholder="Type your message...">
+                    <button onclick="sendMessage()">Send</button>
+                </div>
+            </div>
+            <button id="back-button" onclick="goBack()">Go Back</button>
+        </section>
+    </main>
+
+    <script>
+        const messages = document.getElementById('chatbox-messages');
+        const userInput = document.getElementById('user-input');
+
+        function appendMessage(message, isUser = true) {
+            const messageElement = document.createElement('div');
+            messageElement.className = 'message ' + (isUser ? 'user-message' : 'bot-message');
+            messageElement.textContent = message;
+            messages.appendChild(messageElement);
+            messages.scrollTop = messages.scrollHeight;
+        }
+
+        function sendMessage() {
+            const userMessage = userInput.value.trim();
+            if (userMessage) {
+                appendMessage(userMessage);
+                userInput.value = '';
+                setTimeout(() => {
+                    getBotResponse(userMessage);
+                }, 1000); // Simulate AI response delay
+            }
+        }
+
+        function getBotResponse(message) {
+            let botMessage = '';
+
+            // Simple AI response logic
+            if (message.toLowerCase().includes('bullying')) {
+                botMessage = 'Bullying is a serious issue. Can I help you with some resources or contacts?';
+            } else if (message.toLowerCase().includes('help')) {
+                botMessage = 'Sure, I am here to assist you. What do you need help with?';
+            } else {
+                botMessage = 'I am here to help you. Could you please clarify your question?';
+            }
+
+            appendMessage(botMessage, false);
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

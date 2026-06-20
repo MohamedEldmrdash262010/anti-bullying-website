@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bullying Quiz</title>
+    <link rel="stylesheet" href="6.css">    
+    <link rel="icon" href="images (1).jfif">
+</head>
+<body>
+    <header>
+        <h1>Bullying Quiz</h1>
+    </header>
+    <main>
+        <form id="quiz-form">
+            <div class="question">
+                <p>1. What type of bullying involves physical harm?</p>
+                <label><input type="radio" name="q1" value="Physical Bullying"> Physical Bullying</label><br>
+                <label><input type="radio" name="q1" value="Verbal Bullying"> Verbal Bullying</label><br>
+                <label><input type="radio" name="q1" value="Social Bullying"> Social Bullying</label><br>
+                <label><input type="radio" name="q1" value="Cyberbullying"> Cyberbullying</label>
+            </div>
+            <div class="question">
+                <p>2. What is a common effect of bullying?</p>
+                <label><input type="radio" name="q2" value="Increased Confidence"> Increased Confidence</label><br>
+                <label><input type="radio" name="q2" value="Emotional Distress"> Emotional Distress</label><br>
+                <label><input type="radio" name="q2" value="Better Academic Performance"> Better Academic Performance</label><br>
+                <label><input type="radio" name="q2" value="Enhanced Social Skills"> Enhanced Social Skills</label>
+            </div>
+            <div class="question">
+                <p>3. Which strategy is effective in preventing bullying?</p>
+                <label><input type="radio" name="q3" value="Encouraging Open Communication"> Encouraging Open Communication</label><br>
+                <label><input type="radio" name="q3" value="Ignoring Bullying Incidents"> Ignoring Bullying Incidents</label><br>
+                <label><input type="radio" name="q3" value="Isolating Victims"> Isolating Victims</label><br>
+                <label><input type="radio" name="q3" value="Promoting Negative Behavior"> Promoting Negative Behavior</label>
+            </div>
+            <button type="button" id="submit-button" onclick="checkAnswers()">Submit</button>
+        </form>
+        
+        <!-- Go Back Button -->
+        <a href="5.html" class="back-button">Go Back</a> <!-- Replace previous_page.html with the correct URL -->
+
+        <div id="result" style="display: none;">
+            <div id="result-message"></div>
+            <button id="restart-button" onclick="restartQuiz()" style="display: none;">Restart Quiz</button>
+        </div>
+    </main>
+    <script src="6.js"></script>
+</body>
+</html>

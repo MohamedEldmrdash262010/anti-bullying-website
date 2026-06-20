@@ -1,0 +1,110 @@
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f0f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(90deg, #4b6cb7, #182848);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+section {
+    margin: 30px auto;
+    padding: 30px;
+    max-width: 800px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    color: #1a16df;
+    border-bottom: 2px solid #1a16df;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+ul {
+    margin: 20px 0;
+    padding-left: 20px;
+    list-style-type: square;
+}
+
+ul li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+a {
+    color: #1a16df;
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+a:hover {
+    color: #1a16df;
+    text-decoration: underline;
+}
+
+/* Button Styles */
+button, a.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 1.1em;
+    color: white;
+    background-color: #1a16df;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+}
+
+button:hover, a.button:hover {
+    background-color: #0c6be7;
+    transform: scale(1.05);
+}
+
+button:focus, a.button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(6, 94, 226, 0.5);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    section {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    button, a.button {
+        width: 100%;
+        padding: 12px;
+    }
+
+    h2 {
+        font-size: 1.75em;
+    }
+}

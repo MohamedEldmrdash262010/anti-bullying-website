@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="s.css">
+    <title>Anti-bullying website</title>
+</head>
+<body dir="ltr">
+    <h2>People's Opinions Section</h2>
+    <section id="opinions">
+        <textarea id="opinion-box" placeholder="Write your opinion here..."></textarea><br>
+        <button class="btn" onclick="publishOpinion()">Spread the opinion</button>
+        <a class="btn" href="Eldmrdash Web.html">Go back</a>
+        <div id="published-opinions"></div>
+    </section>
+
+    <script>
+        function publishOpinion() {
+            var opinionBox = document.getElementById('opinion-box');
+            var opinionsDiv = document.getElementById('published-opinions');
+            if (opinionBox.value.trim() !== "") {
+                var newOpinion = document.createElement('div');
+                newOpinion.classList.add('opinion');
+                newOpinion.textContent = opinionBox.value;
+                opinionsDiv.appendChild(newOpinion);
+                opinionBox.value = '';
+            } else {
+                alert('Please write a review before publishing.');
+            }
+        }
+    </script>
+</body>
+</html>

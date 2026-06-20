@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stصe.css">
+    <title>Sign In</title>
+</head>
+<body>
+    <form class="form" id="form1">
+        <h2 class="form__title">Sign In</h2>
+        <div>
+            <input type="email" id="email" placeholder="Email" class="input" required />
+            <div id="emailError" class="error-message"></div>
+        </div>
+        <div>
+            <input type="password" id="password" placeholder="Password" class="input" required />
+            <div id="passwordError" class="error-message"></div>
+        </div>
+        <button type="submit" class="btn">Sign In</button>
+    </form>
+
+    <script>
+        document.getElementById('form1').addEventListener('submit', function(event) {
+            let valid = true;
+
+            // Clear previous errors
+            document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+
+            // Validate Email
+            const email = document.getElementById('email');
+            if (!email.value.trim()) {
+                document.getElementById('emailError').textContent = 'Email is required.';
+                valid = false;
+            } else if (!validateEmail(email.value)) {
+                document.getElementById('emailError').textContent = 'Invalid email format.';
+                valid = false;
+            }
+
+            // Validate Password
+            const password = document.getElementById('password');
+            if (!password.value.trim()) {
+                document.getElementById('passwordError').textContent = 'Password is required.';
+                valid = false;
+            } else if (password.value.length < 6) {
+                document.getElementById('passwordError').textContent = 'Password must be at least 6 characters long.';
+                valid = false;
+            }
+
+            if (!valid) {
+                event.preventDefault(); // Prevent form submission
+            } else {
+                // Simulate form submission
+                event.preventDefault(); // Prevent the default form submission
+                window.location.href = 'Eldmrdash Web/Eldmrdash Web.html'; // Redirect to the desired URL
+            }
+        });
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(String(email).toLowerCase());
+        }
+    </script>
+</body>
+</html>
